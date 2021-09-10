@@ -7,17 +7,14 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var developer: UILabel!
     @IBOutlet weak var year: UILabel!
     
-    var selectedLanguage : String = ""
-    var selectedImage : UIImage = UIImage()
-    var selectedDeveloper : String = ""
-    var selectedYear : String = ""
+    var selectedLanguage : Language?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        language.text = selectedLanguage
-        image.image = selectedImage
-        developer.text = selectedDeveloper
-        year.text = selectedYear
+        language.text = selectedLanguage?.language
+        image.image = selectedLanguage?.image
+        developer.text = selectedLanguage?.developer
+        year.text = selectedLanguage?.year
     }
 }
