@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Table View'da bir Row'a tiklandiginda ilgili verinin detaylarini goruntule.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // Secilen row verilerini gonderilecek row verilerine ata.
         chosenLanguage = languages[indexPath.row]
         chosenImage = images[indexPath.row]
         chosenDeveloper = developer[indexPath.row]
