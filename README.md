@@ -8,7 +8,7 @@ Tables are common in apps with data that is highly structured or organized hiera
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    cell.textLabel?.text = languages[indexPath.row]
+    cell.textLabel?.text = languageArray[indexPath.row].language
     return cell
 }
 ```
@@ -16,19 +16,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ### Specify the number of rows in the Table View.
 ```swift
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return languages.count
+    return languageArray.count
 }
 ```
 
 ### When clicking a Row in Table View, display the details of the relevant data.
 ```swift
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    chosenLanguage = languages[indexPath.row]
-    chosenImage = images[indexPath.row]
-    chosenDeveloper = developer[indexPath.row]
-    chosenYear = year[indexPath.row]
-        
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+    chosenLanguage = languageArray[indexPath.row]
     performSegue(withIdentifier: "toDetailsSegue", sender: nil)
 }
 ```
@@ -39,9 +34,6 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if(segue.identifier == "toDetailsSegue"){
         let destinationVC = segue.destination as! DetailsViewController
         destinationVC.selectedLanguage = chosenLanguage
-        destinationVC.selectedImage = chosenImage
-        destinationVC.selectedDeveloper = chosenDeveloper
-        destinationVC.selectedYear = chosenYear
     }
 }
 ```
@@ -50,10 +42,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ```swift
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if(editingStyle == .delete) {
-        languages.remove(at: indexPath.row)
-        images.remove(at: indexPath.row)
-        developer.remove(at: indexPath.row)
-        year.remove(at: indexPath.row)
+        languageArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
     }
 }
