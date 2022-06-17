@@ -4,7 +4,7 @@ Table views in iOS display rows of vertically scrolling content in a single colu
 
 Tables are common in apps with data that is highly structured or organized hierarchically. Apps that contain hierarchical data often use tables in conjunction with a navigation view controller, which facilitates navigation between different levels of the hierarchy. For example, the Settings app uses tables and a navigation controller to organize the system settings.
 
-### Specify the data to display.
+## Specify the data to display
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
@@ -13,14 +13,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-### Specify the number of rows in the Table View.
+## Specify the number of rows in the Table View
 ```swift
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return languageArray.count
 }
 ```
 
-### When clicking a Row in Table View, display the details of the relevant data.
+## When clicking a Row in Table View, display the details of the relevant data
 ```swift
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
     chosenLanguage = languageArray[indexPath.row]
@@ -28,7 +28,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
 ```
 
-### Perform checks and assignments before starting the segue.
+## Perform checks and assignments before starting the segue
 ```swift
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if(segue.identifier == "toDetailsSegue"){
@@ -38,7 +38,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 }
 ```
 
-### If the row is moved to the left, delete the relevant element.
+## If the row is moved to the left, delete the relevant element
 ```swift
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if(editingStyle == .delete) {
