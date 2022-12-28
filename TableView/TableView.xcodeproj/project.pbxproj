@@ -62,13 +62,13 @@
 			children = (
 				1FC3447626034CAD00FB3AD3 /* AppDelegate.swift */,
 				1FC3447826034CAD00FB3AD3 /* SceneDelegate.swift */,
-				1FC3447A26034CAD00FB3AD3 /* ViewController.swift */,
-				1FC3447C26034CAD00FB3AD3 /* Main.storyboard */,
-				1FC3447F26034CB300FB3AD3 /* Assets.xcassets */,
-				1FC3448126034CB300FB3AD3 /* LaunchScreen.storyboard */,
-				1FC3448426034CB300FB3AD3 /* Info.plist */,
-				6A0E7FF226E91DA3000FD8BA /* DetailsViewController.swift */,
 				6A6AA63A26EB7D8F0006005B /* Language.swift */,
+				1FC3447A26034CAD00FB3AD3 /* ViewController.swift */,
+				6A0E7FF226E91DA3000FD8BA /* DetailsViewController.swift */,
+				1FC3447C26034CAD00FB3AD3 /* Main.storyboard */,
+				1FC3448126034CB300FB3AD3 /* LaunchScreen.storyboard */,
+				1FC3447F26034CB300FB3AD3 /* Assets.xcassets */,
+				1FC3448426034CB300FB3AD3 /* Info.plist */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
