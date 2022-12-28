@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var language: UILabel!
@@ -13,7 +13,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         language.text = selectedLanguage?.language
-        image.image = selectedLanguage?.image
+        image.image = UIImage(named: selectedLanguage?.image ?? "")
         developer.text = selectedLanguage?.developer
         year.text = selectedLanguage?.year
     }
