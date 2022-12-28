@@ -19,9 +19,9 @@ let php = Language(language: "PHP", image: "php", developer: "Rasmus Lerdorf",ye
 let java = Language(language: "Java", image: "java", developer: "James Gsoling",year: "1995")
 let csharp = Language(language: "C#", image: "csharp", developer: "Anders Hejlsberg",year: "2000")
 let c = Language(language: "C", image: "c", developer: "Dennis Ritchie",year: "1972")
-let cplusplus = Language(language: "cplusplus", image: "cplusplus", developer: "Bjarne Stroustrup",year: "1985")
-let javascript = Language(language: "javascript", image: "js", developer: "Brendan Eich",year: "1995")
-let typescript = Language(language: "typescript", image: "ts", developer: "Microsoft",year: "2012")
+let cplusplus = Language(language: "C++", image: "cplusplus", developer: "Bjarne Stroustrup",year: "1985")
+let javascript = Language(language: "JavaScript", image: "js", developer: "Brendan Eich",year: "1995")
+let typescript = Language(language: "TypeScript", image: "ts", developer: "Microsoft",year: "2012")
 
 
 
