@@ -7,7 +7,7 @@ class TableViewController: UIViewController {
     var chosenLanguage : Language?
     
     var isSearching : Bool = false
-    var searchingResult : [Language] = []
+    var languageList : [Language] = languages
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class TableViewController: UIViewController {
         navigationItem.searchController = searchController
     }
         
-    // Segue baslamadan once kontrolleri ve atamalari gerceklestir.
+    // Add event by Seque ID.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "toDetailsSegue"){
             let detailVC = segue.destination as! DetailViewController
@@ -34,54 +34,35 @@ class TableViewController: UIViewController {
 
 extension TableViewController : UITableViewDelegate, UITableViewDataSource, TableViewCellProtocol {    
     
-    // Table View icerisindeki row sayisini belirt.
+    // Return cell count.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isSearching {
-            return searchingResult.count
-        } else {
-            return languages.count
-        }
+        return languageList.count
     }
     
-    // Gosterilecek verileri belirt.
+    // Specify cell contents.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "languagesCell", for: indexPath) as! TableViewCell
         
-        if isSearching {
-            let item = searchingResult[indexPath.row]
-            cell.labelLanguage.text = item.language
-            cell.labelDeveloper.text = item.developer
-            cell.imageViewLanguage.image = UIImage(named: item.image)
-            cell.tableViewCellProtocol = self
-            cell.indexPath = indexPath
-        } else {
-            let item = languages[indexPath.row]
-            cell.labelLanguage.text = item.language
-            cell.labelDeveloper.text = item.developer
-            cell.imageViewLanguage.image = UIImage(named: item.image)
-            cell.tableViewCellProtocol = self
-            cell.indexPath = indexPath
-        }
+        let item = languageList[indexPath.row]
+        cell.labelLanguage.text = item.language
+        cell.labelDeveloper.text = item.developer
+        cell.imageViewLanguage.image = UIImage(named: item.image)
+        cell.tableViewCellProtocol = self
+        cell.indexPath = indexPath
+        
         return cell
     }
     
-    // Table View'da bir Row'a tiklandiginda ilgili verinin detaylarini goruntule.
+    // Assign the click action to Cell.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if isSearching {
-            // Secilen row verilerini gonderilecek row verilerine ata.
-            chosenLanguage = searchingResult[indexPath.row]
-            performSegue(withIdentifier: "toDetailsSegue", sender: nil)
-        } else {
-            // Secilen row verilerini gonderilecek row verilerine ata.
-            chosenLanguage = languages[indexPath.row]
-            performSegue(withIdentifier: "toDetailsSegue", sender: nil)
-        }
+        chosenLanguage = languageList[indexPath.row]
+        performSegue(withIdentifier: "toDetailsSegue", sender: nil)
     }
     
-    // Row sola cekilir ise ilgili elemani sil.
+    // Assign swipe action to Cell.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete) {
             languages.remove(at: indexPath.row)
@@ -99,10 +80,12 @@ extension TableViewController : UISearchResultsUpdating, UISearchBarDelegate {
         
         guard let searching = searchController.searchBar.text else { return }
         
-        if searching == "" { isSearching = false }
-        else {
+        if searching == "" {
+            isSearching = false
+            languageList = languages
+        }  else {
             isSearching = true
-            searchingResult = languages.filter({$0.language.lowercased().contains(searching.lowercased())})
+            languageList = languages.filter({$0.language.lowercased().hasPrefix(searching.lowercased())})
         }
         
         tableView.reloadData()
