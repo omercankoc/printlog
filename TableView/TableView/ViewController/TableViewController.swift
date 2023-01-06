@@ -7,6 +7,7 @@ class TableViewController: UIViewController {
     var chosenLanguage : Language?
     
     var isSearching : Bool = false
+    
     var languageList : [Language] = languages
     
     override func viewDidLoad() {
@@ -36,7 +37,6 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource, Tabl
     
     // Return cell count.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return languageList.count
     }
     
