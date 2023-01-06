@@ -76,6 +76,7 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource, Tabl
 }
 
 extension TableViewController : UISearchResultsUpdating, UISearchBarDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
         
         guard let searching = searchController.searchBar.text else { return }
