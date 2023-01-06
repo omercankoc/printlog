@@ -4,46 +4,48 @@ Table views in iOS display rows of vertically scrolling content in a single colu
 
 Tables are common in apps with data that is highly structured or organized hierarchically. Apps that contain hierarchical data often use tables in conjunction with a navigation view controller, which facilitates navigation between different levels of the hierarchy. For example, the Settings app uses tables and a navigation controller to organize the system settings.
 
-## Specify the data to display
+### Providing the Data and Cells
+- The methods that an object adopts to manage data and provide cells for a table view.
+```swift
+class ViewController : UITableViewDataSource, ... { ... }
+```
+- The object that acts as the data source of the table view.
+```swift
+tableView.dataSource = self
+```
+### Managing Interactions with the Table.
+- Methods for managing selections, configuring section headers and footers, deleting and reordering cells, and performing other actions in a table view.
+```swift
+class ViewController : UITableViewDelegate, ... { ... }
+```
+- The object that acts as the delegate of the table view.
+```swift
+tableView.delegate = self
+```
+### Override Functions
+- Return cell count.
+```swift
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return list.count }
+```
+- Specify cell contents.
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
-    cell.textLabel?.text = languageArray[indexPath.row].language
+        
+    let cell = tableView.dequeueReusableCell(withIdentifier: "languagesCell", for: indexPath) as! TableViewCell
+    ... 
     return cell
 }
 ```
-
-## Specify the number of rows in the Table View
+- Assign the click action to Cell.
 ```swift
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return languageArray.count
-}
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { ... }
 ```
 
-## When clicking a Row in Table View, display the details of the relevant data
-```swift
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
-    chosenLanguage = languageArray[indexPath.row]
-    performSegue(withIdentifier: "toDetailsSegue", sender: nil)
-}
-```
-
-## Perform checks and assignments before starting the segue
-```swift
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if(segue.identifier == "toDetailsSegue"){
-        let destinationVC = segue.destination as! DetailsViewController
-        destinationVC.selectedLanguage = chosenLanguage
-    }
-}
-```
-
-## If the row is moved to the left, delete the relevant element
+- Assign swipe action to Cell.
 ```swift
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if(editingStyle == .delete) {
-        languageArray.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        ...
     }
 }
 ```
