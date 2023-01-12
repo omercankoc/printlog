@@ -49,3 +49,18 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
     }
 }
 ```
+<table class="image-table">
+    <tbody>
+        <tr>
+            <td>
+                <img src="https://github.com/omercankoc/table-view/blob/main/images/languages.png" width="350" height="500">
+            </td>
+            <td>
+                <img src="https://github.com/omercankoc/table-view/blob/main/images/search.png" width="350" height="500">
+            </td>
+            <td>
+                <img src="https://github.com/omercankoc/table-view/blob/main/images/language.png" width="350" height="500">
+            </td>
+        </tr>
+    </tbody>
+</table>
