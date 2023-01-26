@@ -25,7 +25,7 @@ tableView.delegate = self
 ### Override Functions
 - Return cell count.
 ```swift
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return list.count }
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return array.count }
 ```
 - Specify cell contents.
 ```swift
