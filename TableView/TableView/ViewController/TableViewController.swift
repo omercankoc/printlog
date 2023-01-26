@@ -33,7 +33,7 @@ class TableViewController: UIViewController {
     }
 }
 
-extension TableViewController : UITableViewDelegate, UITableViewDataSource, TableViewCellProtocol {    
+extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     
     // Return cell count.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,10 +69,6 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource, Tabl
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         }
     }
-        
-    func learnAction(indexPath: IndexPath) {
-        print("Clicked : \(languages[indexPath.row].language)")
-    }
 }
 
 extension TableViewController : UISearchResultsUpdating, UISearchBarDelegate {
@@ -92,5 +88,11 @@ extension TableViewController : UISearchResultsUpdating, UISearchBarDelegate {
         tableView.reloadData()
         
         print(searching)
+    }
+}
+
+extension TableViewController : TableViewCellProtocol {
+    func learnAction(indexPath: IndexPath) {
+        print("Clicked : \(languages[indexPath.row].language)")
     }
 }
