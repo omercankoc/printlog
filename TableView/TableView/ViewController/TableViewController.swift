@@ -26,7 +26,7 @@ class TableViewController: UIViewController {
         
     // Add event by Seque ID.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "toDetailsSegue"){
+        if(segue.identifier == "DetailSegue"){
             let detailVC = segue.destination as! DetailViewController
             detailVC.selectedLanguage = chosenLanguage
         }
@@ -43,7 +43,7 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     // Specify cell contents.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "languagesCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
         let item = languageList[indexPath.row]
         cell.labelLanguage.text = item.language
@@ -59,7 +59,7 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         chosenLanguage = languageList[indexPath.row]
-        performSegue(withIdentifier: "toDetailsSegue", sender: nil)
+        performSegue(withIdentifier: "DetailSegue", sender: nil)
     }
     
     // Assign swipe action to Cell.

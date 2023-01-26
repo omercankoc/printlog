@@ -33,15 +33,5 @@ class TableViewCell: UITableViewCell {
 
     @IBAction func learn(_ sender: Any) {
         tableViewCellProtocol?.learnAction(indexPath: indexPath!)
-        
-        if count == 0 {
-            buttonLearn.setTitle("Added", for: .normal)
-            buttonLearn.setTitleColor(.blue, for: .normal)
-            count = 1
-        } else if count == 1 {
-            buttonLearn.setTitle("Add", for: .normal)
-            buttonLearn.setTitleColor(.red, for: .normal)
-            count = 0
-        }
     }
 }

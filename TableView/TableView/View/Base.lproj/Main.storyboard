@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="languagesCell" id="Sz9-JG-7qO" customClass="TableViewCell" customModule="TableView" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" id="Sz9-JG-7qO" customClass="TableViewCell" customModule="TableView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sz9-JG-7qO" id="L0h-Ii-TG6">
@@ -29,18 +29,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFU-eW-l9m">
-                                                    <rect key="frame" x="96" y="11" width="48" height="24"/>
+                                                    <rect key="frame" x="104" y="19" width="48" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbs-5O-Llq">
-                                                    <rect key="frame" x="314" y="11" width="80" height="68"/>
+                                                    <rect key="frame" x="310" y="27" width="100" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="TJf-8c-NhL"/>
+                                                        <constraint firstAttribute="width" constant="100" id="YVE-ER-LQj"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Add">
+                                                    <buttonConfiguration key="configuration" style="plain" title="Message">
                                                         <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
@@ -50,27 +50,28 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-9X-BG9">
                                                     <rect key="frame" x="20" y="11" width="68" height="68"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="68" id="red-P9-hd1"/>
+                                                        <constraint firstAttribute="width" constant="68" id="1Lt-Cm-hqS"/>
+                                                        <constraint firstAttribute="height" constant="68" id="hn6-dh-ubE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWO-As-oEa">
-                                                    <rect key="frame" x="96" y="59.5" width="39.5" height="19.5"/>
+                                                    <rect key="frame" x="104" y="51.5" width="39.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="WWO-As-oEa" firstAttribute="leading" secondItem="t3i-9X-BG9" secondAttribute="trailing" constant="8" id="28c-qr-ar4"/>
-                                                <constraint firstItem="WWO-As-oEa" firstAttribute="bottom" secondItem="L0h-Ii-TG6" secondAttribute="bottomMargin" id="GUe-ne-6qu"/>
-                                                <constraint firstItem="BFU-eW-l9m" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" id="P3X-S0-ljc"/>
-                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="bottom" secondItem="L0h-Ii-TG6" secondAttribute="bottomMargin" id="Ztb-hZ-KFC"/>
-                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" id="aXv-Jw-mE2"/>
-                                                <constraint firstItem="zbs-5O-Llq" firstAttribute="trailing" secondItem="L0h-Ii-TG6" secondAttribute="trailingMargin" id="bv5-Yf-GqH"/>
-                                                <constraint firstItem="zbs-5O-Llq" firstAttribute="bottom" secondItem="L0h-Ii-TG6" secondAttribute="bottomMargin" id="erT-OJ-rJ6"/>
-                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="leading" secondItem="L0h-Ii-TG6" secondAttribute="leadingMargin" id="iHx-6Y-cul"/>
-                                                <constraint firstItem="BFU-eW-l9m" firstAttribute="leading" secondItem="t3i-9X-BG9" secondAttribute="trailing" constant="8" id="pdo-ZP-SVD"/>
-                                                <constraint firstItem="zbs-5O-Llq" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" id="xLI-gv-6me"/>
+                                                <constraint firstItem="BFU-eW-l9m" firstAttribute="leading" secondItem="t3i-9X-BG9" secondAttribute="trailing" constant="16" id="D91-HT-wbM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zbs-5O-Llq" secondAttribute="bottom" constant="16" id="GgP-SN-hZ7"/>
+                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" id="V2W-g0-ncU"/>
+                                                <constraint firstItem="WWO-As-oEa" firstAttribute="leading" secondItem="t3i-9X-BG9" secondAttribute="trailing" constant="16" id="WUp-L3-5s3"/>
+                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="bottom" secondItem="L0h-Ii-TG6" secondAttribute="bottomMargin" id="XVF-P4-xlw"/>
+                                                <constraint firstItem="zbs-5O-Llq" firstAttribute="trailing" secondItem="L0h-Ii-TG6" secondAttribute="trailingMargin" constant="16" id="bxL-b9-nFq"/>
+                                                <constraint firstItem="zbs-5O-Llq" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" constant="16" id="ez4-JP-OA1"/>
+                                                <constraint firstItem="t3i-9X-BG9" firstAttribute="leading" secondItem="L0h-Ii-TG6" secondAttribute="leadingMargin" id="gh8-Ao-AVY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="WWO-As-oEa" secondAttribute="bottom" constant="8" id="oel-7b-Tgs"/>
+                                                <constraint firstItem="BFU-eW-l9m" firstAttribute="top" secondItem="L0h-Ii-TG6" secondAttribute="topMargin" constant="8" id="z3k-51-tON"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -95,7 +96,7 @@
                     <navigationItem key="navigationItem" id="OsZ-YT-BuT"/>
                     <connections>
                         <outlet property="tableView" destination="Y9h-0T-Vv0" id="9fe-0p-fQC"/>
-                        <segue destination="cJD-TJ-59K" kind="show" identifier="toDetailsSegue" id="FyA-iR-10j"/>
+                        <segue destination="cJD-TJ-59K" kind="show" identifier="DetailSegue" id="FyA-iR-10j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
