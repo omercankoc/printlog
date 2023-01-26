@@ -7,7 +7,7 @@ Tables are common in apps with data that is highly structured or organized hiera
 ### Providing the Data and Cells
 - The methods that an object adopts to manage data and provide cells for a table view.
 ```swift
-class ViewController : UITableViewDataSource, ... { ... }
+extension TableViewController : UITableViewDataSource, ... { ... }
 ```
 - The object that acts as the data source of the table view.
 ```swift
@@ -16,7 +16,7 @@ tableView.dataSource = self
 ### Managing Interactions with the Table.
 - Methods for managing selections, configuring section headers and footers, deleting and reordering cells, and performing other actions in a table view.
 ```swift
-class ViewController : UITableViewDelegate, ... { ... }
+extension TableViewController : UITableViewDelegate, ... { ... }
 ```
 - The object that acts as the delegate of the table view.
 ```swift
@@ -31,7 +31,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    let cell = tableView.dequeueReusableCell(withIdentifier: "languagesCell", for: indexPath) as! TableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! TableViewCell
     ... 
     return cell
 }
