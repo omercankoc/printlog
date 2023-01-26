@@ -20,9 +20,7 @@ class TableViewCell: UITableViewCell {
     
     var tableViewCellProtocol : TableViewCellProtocol?
     var indexPath : IndexPath?
-    
-    var count : Int = 0
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
     }
