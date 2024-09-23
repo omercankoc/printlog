@@ -1,6 +1,7 @@
 import Foundation
 
 public enum Printlog {
+    
     enum Level {
         case trace, debug,  information, notice, warning, error, critical
         
