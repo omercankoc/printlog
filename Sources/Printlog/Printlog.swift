@@ -1,34 +1,34 @@
 import Foundation
 
-fileprivate enum Level {
-    case trace, debug,  information, notice, warning, error, critical
+enum Printlog {
     
-    var prefix: String {
+    enum Level {
+        case trace, debug,  information, notice, warning, error, critical
         
-        switch self {
-        case .trace: return "🔵 [Trace] 🔵"
-        case .debug: return "🟤 [Debug] 🟤"
-        case .information: return "🟢 [Information] 🟢"
-        case .notice: return "🟡 [Notice] 🟡"
-        case .warning: return "🟠 [Warning] 🟠"
-        case .error: return "🔴 [Error] 🔴"
-        case .critical: return "🟣 [Critical] 🟣"
+        var prefix: String {
             
+            switch self {
+            case .trace: return "🔵 [Trace] 🔵"
+            case .debug: return "🟤 [Debug] 🟤"
+            case .information: return "🟢 [Information] 🟢"
+            case .notice: return "🟡 [Notice] 🟡"
+            case .warning: return "🟠 [Warning] 🟠"
+            case .error: return "🔴 [Error] 🔴"
+            case .critical: return "🟣 [Critical] 🟣"
+                
+            }
         }
     }
-}
 
-fileprivate struct Context {
-    let file: String
-    let function: String
-    let line: Int
-    
-    var description: String {
-        return "\((file as NSString).lastPathComponent) \(function) : \(line)"
+    struct Context {
+        let file: String
+        let function: String
+        let line: Int
+        
+        var description: String {
+            return "\((file as NSString).lastPathComponent) \(function) : \(line)"
+        }
     }
-}
-
-struct Printlog {
     
     fileprivate static func handle(level: Level, string: String, context: Context){
         let component = ["\(level.prefix) : \(string)"].joined(separator: "")
@@ -82,3 +82,4 @@ struct Printlog {
         Printlog.handle(level: .critical, string: string.description, context: context)
     }
 }
+
