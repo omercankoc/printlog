@@ -5,6 +5,7 @@ public enum Printlog {
         case trace, debug,  information, notice, warning, error, critical
         
         var prefix: String {
+            
             switch self {
             case .trace: return "🔵 [Trace] 🔵"
             case .debug: return "🟤 [Debug] 🟤"
@@ -13,6 +14,7 @@ public enum Printlog {
             case .warning: return "🟠 [Warning] 🟠"
             case .error: return "🔴 [Error] 🔴"
             case .critical: return "🟣 [Critical] 🟣"
+                
             }
         }
     }
