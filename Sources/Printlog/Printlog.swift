@@ -8,13 +8,13 @@ public enum Printlog {
         var prefix: String {
             
             switch self {
-            case .trace: return "🔵 [Trace] 🔵"
-            case .debug: return "🟤 [Debug] 🟤"
+            case .trace: return "⚪ [Trace] ⚪"
+            case .debug: return "🔵 [Debug] 🔵"
             case .information: return "🟢 [Information] 🟢"
             case .notice: return "🟡 [Notice] 🟡"
             case .warning: return "🟠 [Warning] 🟠"
             case .error: return "🔴 [Error] 🔴"
-            case .critical: return "🟣 [Critical] 🟣"
+            case .critical: return "⚫ [Critical] ⚫"
                 
             }
         }
