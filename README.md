@@ -6,20 +6,20 @@
 
 You can mark logs with 7 different labels.
 
-1. Trace:
+1. Trace: Appropriate for messages that contain information only when debugging a program.
 ```swift
 Printlog.trace("Trace Message")
 ```
 ```
-🔵 [Trace] 🔵 : Trace Message -> PrintlogTests.swift trace() : 6
+⚪ [Trace] ⚪ : Trace Message -> PrintlogTests.swift trace() : 6
 ```
 
-2. Debug:
+2. Debug: Appropriate for messages that contain information normally of use only when debugging a program.
 ```swift
 Printlog.debug("Debug Message")
 ```
 ```
-🟤 [Debug] 🟤 : Debug Message -> PrintlogTests.swift debug() : 11
+🔵 [Debug] 🔵 : Debug Message -> PrintlogTests.swift debug() : 11
 ```
 
 3. Information: Appropriate for informational messages.
@@ -59,6 +59,6 @@ Printlog.error("Error Message")
 Printlog.critical("Critical Message")
 ```
 ```
-🟣 [Critical] 🟣 : Critical Message -> PrintlogTests.swift critical() : 36
+⚫ [Critical] ⚫ : Critical Message -> PrintlogTests.swift critical() : 36
 ```
 
